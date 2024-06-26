@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Registration</title>
 </head>
+
 <body>
     <h1>Employee Registration Form</h1>
 
     {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            <ul>
-                {% for message in messages %}
-                    <li>{{ message }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+    {% if messages %}
+    <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
     {% endwith %}
 
     <form method="POST" action="{{ url_for('register_employee') }}">
@@ -28,6 +30,15 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br><br>
 
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="date_of_birth">Date of Birth:</label>
+        <input type="date" id="date_of_birth" name="date_of_birth" required><br><br>
+
+        <label for="gender">Gender:</label>
+        <input type="text" id="gender" name="gender" required><br><br>
+
         <label for="department">Department:</label>
         <input type="text" id="department" name="department" required><br><br>
 
@@ -37,7 +48,11 @@
         <label for="hire_date">Hire Date:</label>
         <input type="date" id="hire_date" name="hire_date" required><br><br>
 
+        <label for="status">Status:</label>
+        <input type="text" id="status" name="status" required><br><br>
+
         <input type="submit" value="Register">
     </form>
 </body>
+
 </html>
